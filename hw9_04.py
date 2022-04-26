@@ -1,12 +1,10 @@
 class Car:
-    # atributes
     def __init__(self, speed, color, name, is_police):
         self.speed = speed
         self.color = color
         self.name = name
         self.is_police = is_police
 
-    # methods
     def go(self):
         return f'{self.name} is started'
 
@@ -34,6 +32,7 @@ class TownCar(Car):
             return f'Speed of {self.name} is higher than allow for town car'
         else:
             return f'Speed of {self.name} is normal for town car'
+
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police):
@@ -63,16 +62,16 @@ class PoliceCar(Car):
 
 
 audi = SportCar(100, 'Red', 'Audi', False)
-oka = TownCar(30, 'White', 'Oka', False)
-lada = WorkCar(70, 'Rose', 'Lada', True)
+bmw = TownCar(30, 'White', 'BMW', False)
+opel = WorkCar(70, 'Rose', 'OPEL', True)
 ford = PoliceCar(110, 'Blue',  'Ford', True)
-print(lada.turn_left())
-print(f'When {oka.turn_right()}, then {audi.stop()}')
-print(f'{lada.go()} with speed exactly {lada.show_speed()}')
-print(f'{lada.name} is {lada.color}')
+print(opel.turn_left())
+print(f'When {bmw.turn_right()}, then {audi.stop()}')
+print(f'{opel.go()} with speed exactly {opel.show_speed()}')
+print(f'{opel.name} is {opel.color}')
 print(f'Is {audi.name} a police car? {audi.is_police}')
-print(f'Is {lada.name}  a police car? {lada.is_police}')
+print(f'Is {opel.name}  a police car? {opel.is_police}')
 print(audi.show_speed())
-print(oka.show_speed())
+print(bmw.show_speed())
 print(ford.police())
 print(ford.show_speed())

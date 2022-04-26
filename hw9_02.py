@@ -1,17 +1,12 @@
 class Road:
-    def __init__(self, _length, _width):
-        self._length = _length
-        self._width = _width
+    def __init__(self, length=1000, width=10):
+        self._length = length
+        self._width = width
 
     def mass(self):
-        return self._length * self._width
+        return self._length * self._width * 25 * 5
 
 
-class MassCount(Road):
-    def __init__(self, _length, _width, volume):
-        super().__init__(_length, _width)
-        self.volume = volume
-
-
-r = MassCount(25, 10000, 125)
-print(r.mass())
+if __name__ == "__main__":
+    r = Road(5000, 20)
+    print(f'Масса асфальта - {r.mass()//1000} тонн')

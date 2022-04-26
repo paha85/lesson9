@@ -1,38 +1,40 @@
-class Stationary:
-    def __init__(self, title):
-        self.title = title
+class Stationery:
+    title: str
 
     def draw(self):
-        return f'Запуск отрисовки {self.title}'
+        print("Запуск отрисовки.")
 
 
-class Pen(Stationary):
-    def __init__(self, title):
-        super().__init__(title)
-
-    def draw(self):
-        return f'Вы взяли {self.title}. Запуск отрисовки ручкой'
-
-
-class Pencil(Stationary):
-    def __init__(self, title):
-        super().__init__(title)
+class Pen(Stationery):
+    title = "Ручка"
 
     def draw(self):
-        return f'Вы взяли {self.title}. Запуск отрисовки карандашом'
+        print(f"{self.title} пишет")
 
 
-class Handle(Stationary):
-    def __init__(self, title):
-        super().__init__(title)
+class Pencil(Stationery):
+    title = "Карандаш"
 
     def draw(self):
-        return f'Вы взяли {self.title}. Запуск отрисовки маркером'
+        print(f"{self.title} чертит")
 
 
-pen = Pen('Ручка')
-pencil = Pencil('Карандаш')
-handle = Handle('Маркер')
-print(pen.draw())
-print(pencil.draw())
-print(handle.draw())
+class Handle(Stationery):
+    title = "Маркер"
+
+    def draw(self):
+        print(f"{self.title} рисует")
+
+
+if __name__ == '__main__':
+    stationery = Stationery()
+    stationery.draw()
+
+    pen = Pen()
+    pen.draw()
+
+    pencil = Pencil()
+    pencil.draw()
+
+    handle = Handle()
+    handle.draw()
